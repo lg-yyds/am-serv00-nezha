@@ -22,17 +22,17 @@ download_agent() {
     # 检查是否指定版本
     if [ -z "$VERSION" ]; then
         echo "未指定版本，下载最新版本..."
-        DOWNLOAD_LINK="https://github.com/amclubs/am-nezha-agent/releases/latest/download/nezha-agent_freebsd_arm64.zip"
+        DOWNLOAD_LINK="https://github.com/amclubs/am-nezha-agent/releases/latest/download/nezha-agent_freebsd_amd64.zip"
     else
         echo "指定版本为：$VERSION"
-        DOWNLOAD_LINK="https://github.com/amclubs/am-nezha-agent/releases/download/${VERSION}/nezha-agent_freebsd_arm64.zip"
+        DOWNLOAD_LINK="https://github.com/amclubs/am-nezha-agent/releases/download/${VERSION}/nezha-agent_freebsd_amd64.zip"
     fi
 
     if [ -e "$FILENAME" ]; then
         echo "$FILENAME 已存在，跳过下载"
     else
         echo "正在下载文件..."
-        FILENAME="$WORKDIR/nezha-agent_freebsd_arm64.zip"
+        FILENAME="$WORKDIR/nezha-agent_freebsd_amd64.zip"
         if ! wget -q -O "$FILENAME" "$DOWNLOAD_LINK"; then
             echo "error: 文件 $FILENAME 下载失败。"
             exit
