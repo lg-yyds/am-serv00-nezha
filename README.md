@@ -156,7 +156,7 @@ VERSION=v0.20.5 bash <(curl -s https://raw.githubusercontent.com/amclubs/am-serv
 
 - 3、agent保活命令
 ```
-  (crontab -l; echo "*/12 * * * * pgrep -x "nezha-agent" > /dev/null || nohup /home/${USER}/.nezha-agent/start.sh >/dev/null 2>&1 &") | crontab -
+  (crontab -l; echo "*/12 * * * * pgrep -x "nezha-agent" > /dev/null || nohup /home/${USER}/nezha-agent/start.sh >/dev/null 2>&1 &") | crontab -
 ```
 重启
 ```
@@ -172,7 +172,7 @@ rm -rf ~/.nezha-agent
 --------------------------------------------------------------------------------------------------------
 - 5、V1 版本面板安装（与 V0 版本不兼容，对应面板也要V1版本）
 ```
-bash <(curl -s https://raw.githubusercontent.com/amclubs/am-serv00-nezha/main/install-agent-v1.sh)
+bash <(curl -s https://raw.githubusercontent.com/lg-yyds/am-serv00-nezha/refs/heads/main/install-agent-v1.sh)
 ```
 - 6、指定版本下载安装(把VERSION=自己修改对应要安装的版本号)
 ```
