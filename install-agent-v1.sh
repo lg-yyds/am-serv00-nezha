@@ -13,7 +13,7 @@ purple() { echo -e "\e[1;35m$1\033[0m"; }
 reading() { read -p "$(red "$1")" "$2"; }
 
 USERNAME=$(whoami) && \
-WORKDIR="/home/${USERNAME}/.nezha-agent"
+WORKDIR="/home/${USERNAME}/nezha-agent"
 
 [[ "$HOSTNAME" == "s1.ct8.pl" ]] && WORKDIR="${WORKDIR}" || WORKDIR="${WORKDIR}"
 [ -d "$WORKDIR" ] || (mkdir -p "$WORKDIR" && chmod 777 "$WORKDIR")
@@ -133,7 +133,7 @@ run_agent(){
         echo "nezha-agent 已启动！"
         echo "如果面板处未上线，请检查参数是否填写正确，并停止 agent 进程，删除已安装的 agent 后重新安装！"
         echo "停止 agent 进程的命令：pgrep -f 'nezha-agent' | xargs -r kill"
-        echo "删除已安装的 agent 的命令：rm -rf ~/.nezha-agent"
+        echo "删除已安装的 agent 的命令：rm -rf ~/nezha-agent"
     else
         rm -rf "${WORKDIR}"
         echo "nezha-agent 启动失败，请检查参数填写是否正确，并重新安装！"
